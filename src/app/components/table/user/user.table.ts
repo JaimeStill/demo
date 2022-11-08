@@ -8,9 +8,7 @@ import { BaseTableComponent } from '../base-table.component';
     selector: 'user-table',
     templateUrl: 'user.table.html'
 })
-export class UserTable
-    extends BaseTableComponent<User, UserApi> {
-
+export class UserTable extends BaseTableComponent<User, UserApi> {
     displayedColumns: string[] = ['position', 'name', 'email', 'actions'];
 
     constructor(

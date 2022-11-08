@@ -44,11 +44,11 @@ export abstract class BaseApi<T extends Entity> {
         this.getById$(id)
     );
 
-    save = (entity: T): Promise<T> => firstValueFrom(
-        of<T>(this.internalSave(entity))
+    saveAsync = (entity: T): Promise<T> => firstValueFrom(
+        of<T>(this.save(entity))
     );
 
-    internalSave = (entity: T): T => {
+    save = (entity: T): T => {
         const entities = this._entities.getValue();
         const index = entities.findIndex(x => x.id === entity.id);
 

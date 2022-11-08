@@ -21,7 +21,7 @@ export class FormDialog<T extends FormGroup, E extends Entity, S extends BaseApi
     }
 
     save = async () => {
-        const res = await this.data.dataSvc.save(this.outletRef?.instance?.value?.value);
+        const res = await this.data.dataSvc.saveAsync(this.outletRef?.instance?.value?.value);
 
         res && this._dialogRef.close(res);
     }
